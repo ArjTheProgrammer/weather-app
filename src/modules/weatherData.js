@@ -1,16 +1,15 @@
 export default class WeatherData{
-    constructor(address, date, icon, temp, precip, humidity, windspeed, description){
+    constructor(icon, address, time, date, temp, condition, feelsLike, description, windspeed, humidity, visibility, pressure, dew){
         this.address = address;
+        this.time = time;
         this.date = date;
         this.icon = icon;
         this.temp = temp;
-        this.precip = precip;
-        this.humidty = humidity;
-        this.windspeed = windspeed;
+        this.condition = condition;
+        this.feelsLike = feelsLike;
         this.description = description;
-    }
-
-    displayCurrentWeather(){
-        
+        this.windspeed = windspeed;
+        this.humidty = humidity;
+        this.visibility = visibility;
     }
 }
