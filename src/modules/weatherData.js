@@ -73,24 +73,24 @@ export default class WeatherData{
         tempCon.append(disDesc);
 
         //data container //container for other data
-        const dataCon = document.createElement("div");
-        dateCon.className = "data-container";
-        currentCon.append(dataCon);
+        const infoCon = document.createElement("div");
+        infoCon.className = "info-container";
+        currentCon.append(infoCon);
 
         const disWindspeed = displayData("Windspeed", this.windspeed);
-        dataCon.append(disWindspeed);
+        infoCon.append(disWindspeed);
 
         const disHumidity = displayData("Humidity", this.humidity);
-        dataCon.append(disHumidity);
+        infoCon.append(disHumidity);
 
         const disVisibility = displayData("Visibility", this.visibility);
-        dataCon.append(disVisibility);
+        infoCon.append(disVisibility);
 
         const disPressure = displayData("Pressure", this.pressure);
-        dataCon.append(disPressure);
+        infoCon.append(disPressure);
 
         const disDew = displayData("Dew", this.dew);
-        dataCon.append(disDew);
+        infoCon.append(disDew);
     }
 }
 
