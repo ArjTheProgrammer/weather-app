@@ -1,0 +1,99 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.weather-app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+main > .current-container {
+  background-color: rgba(255, 255, 255, 0.814);
+  padding: 30px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/*for time, date, and location*/
+.current-container > .date-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1.8fr 2.2fr 5fr;
+  padding-bottom: 10px;
+}
+
+.current-container > .date-container > span:first-child {
+  font-weight: 700;
+}
+
+.current-container > .date-container > span:nth-child(2) {
+  grid-row: 2 / 3;
+}
+
+.current-container > .date-container > span:nth-child(3),
+.current-container > .date-container > span:nth-child(4) {
+  grid-row: 1 / 3;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/*for temp*/
+.current-container > .temp-container {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.2fr 5fr;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.temp-container > .icon-container,
+.temp-container > span:first-of-type,
+.temp-container > span:nth-of-type(2) {
+  grid-row: 1 / 3;
+}
+
+.temp-container > span:last-of-type {
+  grid-column: 1 / 5;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.temp-container > .icon-container > svg {
+  height: 100px;
+  width: 100px;
+}
+
+.temp-container > span:first-of-type {
+  font-size: 3rem;
+}
+
+.temp-container > span:nth-of-type(2) {
+  font-size: 2rem;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.temp-container > span:nth-of-type(3) {
+  font-weight: 700;
+}
+
+/*for info container*/
+.current-container > .info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.current-container > .info-container > .data-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 10px 0px;
+  gap: 5px;
+  width: calc(100% / 5);
+}
+
+.current-container > .info-container > .data-container > .data-title {
+  font-weight: 600;
+}

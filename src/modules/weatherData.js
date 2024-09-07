@@ -1,11 +1,14 @@
+import icon from "./icons.js";
+
+
 export default class WeatherData{
-    constructor(icon, address, time, date, temp, 
+    constructor(icon, time, date, address, temp, 
         condition, feelsLike, description, windspeed, humidity, 
         visibility, pressure, dew){
         this.icon = icon;
-        this.address = address;
         this.time = time;
         this.date = date;
+        this.address = address;
         this.temp = temp;
         this.condition = condition;
         this.feelsLike = feelsLike;
@@ -53,12 +56,18 @@ export default class WeatherData{
         currentCon.append(tempCon);
 
         //display of temperature and description
-        const disIcon = document.createElement("img");
+        const disIcon = document.createElement("div");
+        disIcon.className = "icon-container";
+        disIcon.innerHTML = icon(this.icon);
         tempCon.append(disIcon);
 
         const disTemp = document.createElement("span");
         disTemp.textContent = this.temp;
         tempCon.append(disTemp);
+
+        const tempScale = document.createElement("span");
+        tempScale.textContent = " F°";
+        tempCon.append(tempScale);
 
         const disCondition = document.createElement("span");
         disCondition.textContent = this.condition;
