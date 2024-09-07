@@ -9,4 +9,10 @@ export default class WeatherAPI {
             const currentWeather = await response.json();
             return currentWeather;
         }
+
+        async getWeeklyWeather(location) {
+            const response = await fetch (`${this.baseUrl}${location}/next7days?key=${this.apiKey}`, {mode: 'cors'});
+            const weeklyWeather = await response.json();
+            return weeklyWeather;
+        }
 }

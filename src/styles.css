@@ -35,6 +35,10 @@ main > .current-container {
   grid-row: 2 / 3;
 }
 
+.current-container > .date-container > span:nth-child(3) {
+  text-align: center;
+}
+
 .current-container > .date-container > span:nth-child(3),
 .current-container > .date-container > span:nth-child(4) {
   grid-row: 1 / 3;
