@@ -4,7 +4,7 @@ import icon from "./icons.js";
 export default class WeatherData{
     constructor(icon, time, date, address, temp, 
         condition, feelsLike, description, windspeed, humidity, 
-        visibility, pressure, dew){
+        visibility, pressure, dew, week){
         this.icon = icon;
         this.time = time;
         this.date = date;
@@ -18,6 +18,7 @@ export default class WeatherData{
         this.visibility = visibility;
         this.pressure = pressure;
         this.dew = dew;
+        this.week = week;
     }
 
     displayCurrentWeather(){
@@ -100,6 +101,39 @@ export default class WeatherData{
 
         const disDew = displayData("Dew", this.dew);
         infoCon.append(disDew);
+    }
+
+    displayWeeklyWeather(){
+        const main = document.querySelector("main");
+
+        //container of the current data
+        const weeklyCon = document.createElement("div");
+        weeklyCon.className = "weekly-container";
+        main.append(weeklyCon);
+
+        //display the days
+        for (let day of this.week){
+            const dayCon = document.createElement("div");
+            dayCon.className = "day-container";
+            weeklyCon.append(dayCon);
+
+            const disDate = document.createElement("span");
+            disDate.textContent = day.datetime;
+            dayCon.append(disDate);
+
+            const disIcon = document.createElement("div");
+            disIcon.className = "icon-container";
+            disIcon.innerHTML = icon(day.icon);
+            dayCon.append(disIcon);
+
+            const tempMax = document.createElement("span");
+            tempMax.textContent = day.tempmax;
+            dayCon.append(tempMax);
+
+            const tempMin = document.createElement("span");
+            tempMin.textContent = day.tempmin;
+            dayCon.append(tempMin);
+        }
     }
 }
 
